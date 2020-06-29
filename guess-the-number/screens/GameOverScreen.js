@@ -3,14 +3,16 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	Dimensions,
+	Button,
 	Image,
+	Dimensions,
 	ScrollView,
 } from 'react-native';
+
 import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
-import Colors from '../constants/colors';
 import MainButton from '../components/MainButton';
+import Colors from '../constants/colors';
 
 const GameOverScreen = (props) => {
 	return (
@@ -21,8 +23,8 @@ const GameOverScreen = (props) => {
 					<Image
 						source={require('../assets/success.png')}
 						// source={{
-						// 	uri:
-						// 		'https://upload.wikimedia.org/wikipedia/commons/8/88/Summit_of_the_Matterhorn.jpg',
+						//   uri:
+						//     'https://cdn.pixabay.com/photo/2016/05/05/23/52/mountain-summit-1375015_960_720.jpg'
 						// }}
 						style={styles.image}
 						resizeMode="cover"
@@ -36,6 +38,7 @@ const GameOverScreen = (props) => {
 						<Text style={styles.highlight}>{props.userNumber}</Text>.
 					</BodyText>
 				</View>
+
 				<MainButton onPress={props.onRestart}>NEW GAME</MainButton>
 			</View>
 		</ScrollView>
@@ -47,6 +50,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
+		paddingVertical: 10,
 	},
 	imageContainer: {
 		width: Dimensions.get('window').width * 0.7,
@@ -55,7 +59,7 @@ const styles = StyleSheet.create({
 		borderWidth: 3,
 		borderColor: 'black',
 		overflow: 'hidden',
-		marginVertical: Dimensions.get('window').height / 20,
+		marginVertical: Dimensions.get('window').height / 30,
 	},
 	image: {
 		width: '100%',
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
 	},
 	resultContainer: {
 		marginHorizontal: 30,
-		marginVertical: Dimensions.get('window').height / 40,
+		marginVertical: Dimensions.get('window').height / 60,
 	},
 	resultText: {
 		textAlign: 'center',
